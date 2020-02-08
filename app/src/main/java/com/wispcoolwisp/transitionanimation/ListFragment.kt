@@ -33,6 +33,10 @@ class ListFragment : Fragment(), OnItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initRecycler()
+    }
+
+    private fun initRecycler() {
         recycler_view.adapter = adapter
         recycler_view.layoutManager = LinearLayoutManager(context)
         adapter.update(generateData())
@@ -48,7 +52,7 @@ class ListFragment : Fragment(), OnItemClickListener {
         MenuItem(Color.RED, "RED COLOR"),
         MenuItem(Color.GREEN, "GREEN COLOR"),
         MenuItem(Color.BLUE, "BLUE COLOR"),
-        MenuItem(Color.WHITE, "WHITE COLOR"),
+        MenuItem(Color.LTGRAY, "LTGRAY COLOR"),
         MenuItem(Color.CYAN, "CYAN COLOR"),
         MenuItem(Color.MAGENTA, "MAGENTA COLOR"),
         MenuItem(Color.YELLOW, "YELLOW COLOR")

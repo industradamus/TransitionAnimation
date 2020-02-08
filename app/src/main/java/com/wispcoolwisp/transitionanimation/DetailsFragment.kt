@@ -2,6 +2,7 @@ package com.wispcoolwisp.transitionanimation
 
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,10 +32,12 @@ class DetailsFragment : Fragment(), OnItemClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         setView()
-        initRecycler()
+        //TODO Запустить по окончании анимации фрагмента
+        Handler().postDelayed({ initRecycler() }, 500)
     }
 
     private fun initRecycler() {
+        recycler_view.visibility = View.VISIBLE
         recycler_view.adapter = adapter
         recycler_view.layoutManager = LinearLayoutManager(context)
         adapter.update(generateData())
